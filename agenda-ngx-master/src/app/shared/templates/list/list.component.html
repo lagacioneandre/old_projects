@@ -1,0 +1,82 @@
+<div id="listagem-contatos">
+
+  <div class="group-index" *ngFor="let contacts of myContactsOrdered; let indexGroup = index">
+    <div class="col-index left">
+      <h3 class="letter">{{ contacts.index }}</h3>
+    </div>
+
+    <div class="col-contacts-by-index left">
+      <div class="row-contact" *ngFor="let contact of contacts.contacts; let indexContact = index" [ngClass]="{'active': contact?.isSelected, 'hidden': contact?.hidden}"
+        (mouseleave)="hiddenMoreOptions(contact)">
+
+        <div class="thumb-check left relative">
+          <div class="check">
+            <input type="checkbox" id="contact_{{ contact.id }}" [(checked)]="contact.selected" (change)="selectContact(contact)" />
+            <label for="contact_{{ contact.id }}"></label>
+          </div>
+
+          <div class="thumb">
+            <img src="{{ contact.linkImagem }}" alt="" class="full-img" *ngIf="contact.linkImagem" />
+            <span class="letter" [ngStyle]="{ 'background-color': contact.imgColor }" *ngIf="!contact.linkImagem">{{
+              contacts.index
+              }}
+            </span>
+          </div>
+        </div>
+        <!--/thumb-check-->
+
+        <h3 class="name left">{{ contact.nomeContato }}</h3>
+        <div class="email default-text left">{{ contact.emailContato }}</div>
+        <div class="phone-number default-text left">{{ contact.telefoneContato | phoneMask }}</div>
+        <div class="description default-text left">{{ contact.descricaoContato }}</div>
+
+        <div class="actions right">
+          <div class="cearfix relative">
+            <span class="icon-action" [ngClass]="{'favorite': contact.favorito}" (click)="favoritarContato(contact)">
+              <i class="fa fa-star" aria-hidden="true"></i>
+            </span>
+
+            <span class="icon-action" routerLink="/contacts/edit/{{ contact.id }}">
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            </span>
+
+            <span class="icon-action" (click)="showMoreOptions($event, contact, menuMoreOptions)">
+              <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            </span>
+
+            <ul class="menu-more-options" #menuMoreOptions [ngClass]="{ 'show': contact?.showOptions }" [ngStyle]="{'top': topValue}">
+              <li (click)="hideContact(contact)" i18n="@@listaContatosOcultarContato">
+                <span class="icon">
+                  <i class="fa fa-caret-square-o-down" aria-hidden="true"></i>
+                </span>
+                Ocultar dos contatos
+              </li>
+              <li (click)="removeContact(contact)" i18n="@@listaContatosExcluirContato">
+                <span class="icon">
+                  <i class="fa fa-trash-o" aria-hidden="true"></i>
+                </span>
+                Excluir
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--/row-contact-->
+    </div>
+    <!--/col-contacts-by-index-->
+  </div>
+  <!--/group-index-->
+
+  <app-confirm></app-confirm>
+  <app-toaster></app-toaster>
+
+  <button type="button" class="add-contact" routerLink="/contacts/new">
+    <i class="fa fa-plus" aria-hidden="true"></i>
+  </button>
+
+  <div class="alert primary" role="alert" *ngIf="showMessageEmpty" i18n="@@listaContatosTextoContatosNaoEncontrados">
+    Não foi encontrado nenhum contato! Clique <a routerLink="/contacts/new" title="Adicionar contato"> aqui</a> para
+    adicionar contatos.
+  </div>
+</div>
+<!--/listagem-contatos-->

@@ -1,0 +1,4 @@
+
+1 - Sair da aplicação ao clicar em sair
+2 - Fazer os links no menu para trocar de idioma
+3 - Publicar no gh-pages nos três idiomas

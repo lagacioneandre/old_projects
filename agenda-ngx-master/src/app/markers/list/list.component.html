@@ -1,0 +1,44 @@
+<div id="markers">
+  <h2 class="title-page" i18n="@@tituloPaginaMarcadores">Marcadores</h2>
+
+  <form class="clearfix relative">
+    <input type="text" class="input-form" i18n-placeholder="@@placeholderAdicionarMarcador" placeholder="Adicionar marcador"
+      (blur)="hiddenMessage()" #inputMarker />
+    <span class="mensagem-erro" *ngIf="erroMessage" [innerHTML]="erroMessage"></span>
+
+    <button class="btn primary" type="button" (click)="saveMarker()">
+      <i class="fa fa-check" *ngIf="!isEditing['id']"></i>
+      <i class="fa fa-edit" *ngIf="isEditing['id']"></i>
+    </button>
+  </form>
+
+  <table class="default-table" *ngIf="!messageAlert">
+    <thead>
+      <tr>
+        <th i18n="@@tituloColunaMarcadores">Marcadores</th>
+        <th class="col-actions" i18n="@@tituloColunaAcoes">Ações</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let marker of markersList">
+        <td>{{ marker.name }}</td>
+        <td class="col-actions">
+          <button class="btn default" type="button" (click)="edit(marker)">
+            <i class="fa fa-edit"></i>
+          </button>
+
+          <button class="btn danger" type="button" (click)="delete(marker)">
+            <i class="fa fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert primary" *ngIf="messageAlert">{{ messageAlert }}</div>
+</div>
+<!--/markers-->
+
+<app-confirm></app-confirm>
+<app-toaster></app-toaster>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "749046746018",
+    "firebase_url": "https://chat-online-flutter-12e83.firebaseio.com",
+    "project_id": "chat-online-flutter-12e83",
+    "storage_bucket": "chat-online-flutter-12e83.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749046746018:android:89b9228ed3f4a2c8a800fb",
+        "android_client_info": {
+          "package_name": "br.com.lagacione.chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "749046746018-j569uga2st8rbbb95086cthi6mm1u744.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.lagacione.chat",
+            "certificate_hash": "6da8202ed63c25e4b5b0b4f37106a70d4a29ce00"
+          }
+        },
+        {
+          "client_id": "749046746018-anggp5tg5u4v86houto4ncng4rjt8io4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBF-EyCqqBOgepFFSARSHPo07yPujXO60I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "749046746018-anggp5tg5u4v86houto4ncng4rjt8io4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

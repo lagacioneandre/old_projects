@@ -1,0 +1,90 @@
+html,
+body {
+    height: 100%;
+    font-family: 'openSans', helvetica, arial, sans-serif !important;
+    overflow: hidden;
+}
+
+* {
+    outline: none;
+}
+
+.clearfix {
+    width: 100%;
+    overflow: hidden;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.relative {
+    position: relative;
+}
+
+.full-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.text-right {
+    text-align: right;
+}
+
+// colors
+$white: #fff;
+$black: #000;
+$blue-top: #2a56c6;
+$button-count: #4d90fe;
+$default-text: #232323;
+$button-add-contact: #e91e63;
+$error: #c00000;
+$success: #00c02a;
+$btn-primary: #2870b2;
+$border-btn-default: #c5d0e1;
+$color-btn-default: #3b495e;
+$toaster-success: #509a4e;
+$toaster-info: #328eab;
+$toaster-warning: #f48820;
+$toaster-error: #b22c2c;
+$toaster-shadow: rgba(0, 0, 0, .4);
+$favorite: #e2b900;
+$primary-text: #004085;
+$primary-background: #cce5ff;
+$primary-border: #b8daff;
+
+// mixins
+@mixin ellipsis {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+@mixin transition($element, $duration, $animation) {
+    -webkit-transition: $element $duration $animation;
+       -moz-transition: $element $duration $animation;
+        -ms-transition: $element $duration $animation;
+         -o-transition: $element $duration $animation;
+            transition: $element $duration $animation;
+}
+
+@mixin scale($size) {
+    -webkit-transform: scale($size);
+       -moz-transform: scale($size);
+        -ms-transform: scale($size);
+         -o-transform: scale($size);
+            transform: scale($size);
+}
+
+@mixin rotate($deg) {
+    -webkit-transform: rotate($deg);
+       -moz-transform: rotate($deg);
+        -ms-transform: rotate($deg);
+         -o-transform: rotate($deg);
+            transform: rotate($deg);
+}

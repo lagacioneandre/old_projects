@@ -1,0 +1,68 @@
+// DEFAULT COLORS
+$white: #fff;
+$black: #000;
+$red: #f00;
+$gray: #555;
+$normal: #009dd1;
+$warning: #f0971a;
+$danger: #d90000;
+$finish: #059900;
+
+// SIZES
+$default-size: 10px;
+
+// CONDITIONAL THEMES
+$themes: (
+		default-theme: (color: #3c8dbc),
+		orange-theme: (color: #ff8000),
+		purple-theme: (color: #ff00ee),
+		red-theme: (color: #d90000)
+);
+
+// MIXINS
+@mixin ellipsis {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+@mixin centerXY {
+	display: flex;
+	vertical-align: middle;
+	align-items: center;
+}
+
+@mixin transition-ease($value) {
+	-webkit-transition: $value all ease-in-out;
+	   -moz-transition: $value all ease-in-out;
+	    -ms-transition: $value all ease-in-out;
+		   -o-transition: $value all ease-in-out;
+					transition: $value all ease-in-out;
+}
+
+@mixin transform3d($valueX, $valueY, $valueZ) {
+	-webkit-transform: translate3d($valueX, $valueY, $valueZ);
+	   -moz-transform: translate3d($valueX, $valueY, $valueZ);
+	    -ms-transform: translate3d($valueX, $valueY, $valueZ);
+		   -o-transform: translate3d($valueX, $valueY, $valueZ);
+					transform: translate3d($valueX, $valueY, $valueZ);
+}
+
+@mixin scale($value) {
+	-webkit-transform: scale($value);
+	   -moz-transform: scale($value);
+	    -ms-transform: scale($value);
+		   -o-transform: scale($value);
+					transform: scale($value);
+}
+
+
+
+
+
+
+// MEDIAS QUERIES
+$media-desk-larger: "only screen and (min-width: 1201px)";
+$media-desk-small: "only screen and (min-width: 992px) and (max-width: 1200px)";
+$media-tablet: "only screen and (min-width: 768px) and (max-width: 991px)";
+$media-cellphone: "only screen and (max-width: 767px)";

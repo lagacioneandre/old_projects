@@ -1,0 +1,119 @@
+@import '_default';
+
+.input-form {
+    width: 100%;
+    border: 1px solid darken($white, 20%);
+    border-top: 2px solid $blue-top;
+    padding: 10px;
+    margin: 0 0 20px;
+
+    &.error {
+        border-top-color: $error;
+    }
+}
+
+textarea {
+    &.input-form {
+        height: 100px;
+        resize: none;
+    }
+}
+
+.btn {
+    width: 100px;
+    height: 35px;
+    border: 1px solid;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 0 0 0 10px;
+
+    &.default {
+        border-color: $border-btn-default;
+        background-color: $white;
+        color: $color-btn-default;
+
+        &:hover {
+            background-color: darken($white, 15%);
+        }
+    }
+
+    &.primary {
+        border-color: $btn-primary;
+        background-color: $btn-primary;
+        color: $white;
+
+        &:hover {
+            background-color: lighten($btn-primary, 15%);
+        }
+
+        &[disabled] {
+            background-color: lighten($btn-primary, 15%);
+            cursor: no-drop;
+        }
+    }
+
+    &.danger {
+        background-color: lighten($error, 15%);
+        color: $white;
+
+        &:hover {
+            background-color: $error;
+        }
+    }
+}
+
+.mensagem-erro {
+    font-size: 10px;
+    color: $error;
+    position: absolute;
+    right: 0;
+    bottom: 7px;
+}
+
+.checkbox-label {
+    overflow: hidden;
+    display: inline-block;
+    margin: 15px 0 0;
+
+    input[type=checkbox] {
+        position: absolute;
+        left: -50px;
+    }
+
+    .text {
+        padding: 0 0 5px 25px;
+        font-size: 14px;
+
+        &:before {
+            content: '';
+            background-color: darken($white, 10%);
+            border: 1px solid darken($white, 20%);
+            border-top: 2px solid $blue-top;
+            width: 15px;
+            height: 15px;
+            display: block;
+            position: absolute;
+            left: 2px;
+            top: 0;
+        }
+
+        &:after {
+            content: '';
+            border-bottom: 2px solid $blue-top;
+            border-left: 2px solid $blue-top;
+            width: 10px;
+            height: 5px;
+            display: none;
+            position: absolute;
+            left: 5px;
+            top: 4px;
+            @include rotate(-45deg);
+        }
+
+    } //.text
+
+    input[type=checkbox]:checked + .text:after {
+        display: block;
+    }
+
+} //.checkbox-label

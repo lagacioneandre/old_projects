@@ -1,0 +1,57 @@
+@import '../../../../assets/styles/_default.scss';
+
+#login {
+    background-color: $blue-top;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .box-login {
+        background-color: $white;
+        width: 300px;
+        padding: 15px;
+
+        .erro-login {
+            font-size: 13px;
+            color: $error;
+            text-align: center;
+            margin: 0 0 10px;
+        }
+
+        .row-form {
+            margin: 0 0 20px;
+
+            label {
+                font-size: 12px;
+                margin: 0 0 5px;
+                display: block;
+            }
+
+            .input-form {
+                margin: 0;
+            }
+
+            .icone-erro {
+                color: $error;
+                position: absolute;
+                right: 5px;
+                top: 27px;
+            }
+
+            .mensagem-erro {
+                display: block;
+                text-align: right;
+                position: initial;
+                margin: 3px 0 0;
+            }
+
+        } //.row-form
+    }
+
+} //#login

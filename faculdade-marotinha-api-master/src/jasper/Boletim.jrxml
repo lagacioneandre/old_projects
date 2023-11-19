@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Boletim" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a6bf61e2-e2c1-4549-a8db-50e6b8cf9a45">
+	<property name="ireport.zoom" value="1.0000000000000089"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.background.image" value="C:\Users\Usuario\Downloads\download.png"/>
+	<property name="ireport.background.image.properties" value="true,true,0.25,-8,-8,0,0,403,146"/>
+	<import value="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 4">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="dataset1" uuid="7310889a-a10f-494a-8bc3-951e27da95dc"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Jobs\\estudando\\faculdade-marotinha-api\\src\\jasper\\"]]></defaultValueExpression>
+	</parameter>
+	<field name="ano" class="java.lang.Integer">
+		<fieldDescription><![CDATA[ano]]></fieldDescription>
+	</field>
+	<field name="professor" class="java.lang.String"/>
+	<field name="aluno" class="java.lang.String"/>
+	<field name="turma" class="java.lang.String"/>
+	<field name="notas" class="java.util.List">
+		<property name="notaBimestre1" value=""/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="120" splitType="Stretch">
+			<staticText>
+				<reportElement x="269" y="0" width="129" height="37" uuid="61560e07-b2ee-4964-8d65-c453b452f67b"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Boletim Escolar:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="398" y="0" width="100" height="37" uuid="95564384-5429-46a5-9fbd-f1a076f5f69a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ano}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="802" height="1" uuid="8539d9bc-2337-4e4b-bc09-aa9f53e483e2"/>
+			</line>
+			<line>
+				<reportElement x="1" y="-140" width="2" height="36" uuid="a93343fd-9ba1-45fe-8e5d-9c16dc6e00e7"/>
+			</line>
+			<line>
+				<reportElement x="0" y="1" width="1" height="118" uuid="fd9a6e38-4571-4d68-9019-43fce2fb9d8c"/>
+			</line>
+			<line>
+				<reportElement x="802" y="0" width="1" height="119" uuid="472fac85-e776-4ada-ab29-8a4ea5e1b19c"/>
+			</line>
+			<textField>
+				<reportElement x="83" y="48" width="315" height="20" uuid="a4283650-39d3-4c43-96f7-c5c70797da21"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{professor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="48" width="68" height="20" uuid="7ed64d85-c80f-4e4a-92ff-79d12cbcccb6"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Professor:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="398" y="48" width="46" height="20" uuid="1c436c72-0032-4353-b8bd-b93961460ab9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Aluno:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="444" y="48" width="358" height="20" uuid="393b9e47-3a49-4d01-92c3-65f11b3e55d9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aluno}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="91" width="43" height="20" uuid="6f191cd3-ae1b-454f-9c37-6b469358ac61"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Turma:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="36" width="802" height="1" uuid="b00e295e-6fce-4101-926b-25447016c90e"/>
+			</line>
+			<line>
+				<reportElement x="1" y="81" width="802" height="1" uuid="12b39952-42f0-4ec5-b99c-1f17ba18295e"/>
+			</line>
+			<line>
+				<reportElement x="1" y="119" width="802" height="1" uuid="b796b683-ce9c-40bf-9725-7c488168c788"/>
+			</line>
+			<textField>
+				<reportElement x="59" y="91" width="743" height="20" uuid="5977c659-c109-4aa2-8376-9b28a5dda33a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{turma}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="291" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="1" height="291" uuid="f1021263-e1d9-408a-b396-731a38733884"/>
+			</line>
+			<line>
+				<reportElement x="802" y="0" width="1" height="291" uuid="16758c64-8f7e-4b96-aec3-439dc2dd0a4d"/>
+			</line>
+			<line>
+				<reportElement x="1" y="290" width="801" height="1" uuid="054d8d0a-562d-4bf5-9e73-575b30a810a7"/>
+			</line>
+			<staticText>
+				<reportElement x="27" y="27" width="100" height="20" uuid="8dc6b746-c0d5-4fcf-9be3-17f27875dc75"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Matéria]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="403" y="27" width="60" height="20" uuid="616ad3c1-9dd6-447c-b052-19960eb3d8ee"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[1° Bimestre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="478" y="27" width="60" height="20" uuid="6ef9c5d0-25d5-4da4-a5f9-099fda4d874b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[2° Bimestre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="555" y="27" width="60" height="20" uuid="bee1b376-13bb-4349-9d0a-293b676426ec"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[3° Bimestre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="633" y="27" width="60" height="20" uuid="ec24ab12-c7c5-4422-8787-2744736785ea"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[4° Bimestre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="713" y="27" width="60" height="20" uuid="3f930146-7dc8-4fcb-a77e-0bc9b909a53b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Média Final]]></text>
+			</staticText>
+			<line>
+				<reportElement x="15" y="16" width="772" height="1" uuid="c59ee06d-0cef-431e-8f00-5859fc8d3eca"/>
+			</line>
+			<line>
+				<reportElement x="15" y="57" width="772" height="1" uuid="36b8138a-6247-42d2-974e-3fca731a105e"/>
+			</line>
+			<line>
+				<reportElement x="787" y="16" width="1" height="42" uuid="15d5301a-bc4c-4082-81ba-8ece00ca9e94"/>
+			</line>
+			<line>
+				<reportElement x="703" y="16" width="1" height="42" uuid="f141c3e9-a3e4-4a29-8580-bc466f7dbb67"/>
+			</line>
+			<line>
+				<reportElement x="623" y="16" width="1" height="42" uuid="64895e8f-ceb5-4f6c-849f-b8d938a88d1a"/>
+			</line>
+			<line>
+				<reportElement x="546" y="16" width="1" height="42" uuid="81d3fdc4-0500-40aa-bce9-2b2cc2979362"/>
+			</line>
+			<line>
+				<reportElement x="470" y="16" width="1" height="42" uuid="e8cd0ec2-877f-4439-aa0b-59ca2c05f874"/>
+			</line>
+			<line>
+				<reportElement x="395" y="16" width="1" height="42" uuid="09b882fd-830c-4d7f-b2c6-88a5f0c91779"/>
+			</line>
+			<line>
+				<reportElement x="15" y="16" width="1" height="42" uuid="8df607eb-5a44-4011-bb53-a23ef97bac07"/>
+			</line>
+			<subreport>
+				<reportElement x="15" y="57" width="772" height="44" uuid="77f740f6-9b0e-4129-8286-31a82d7c8695"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{notas})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Boletim_lista_notas.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

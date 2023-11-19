@@ -1,0 +1,39 @@
+<div id="login">
+  <form class="box-login" novalidate (submit)="login(email.value, senha.value)" [formGroup]="formLogin">
+    <p class="erro-login" *ngIf="erroLogin" i18n="@@loginUsuarioSenhaIncorretos">Usuário e/ou senha incorretos!</p>
+
+    <div class="row-form relative">
+      <label i18n="@@loginEmail">E-mail:</label>
+      <input type="email" class="input-form" placeholder="teste@teste.com.br" #email [ngClass]="{'error': erroLogin}" formControlName="email"
+      />
+
+      <span class="icone-erro" *ngIf="mostrarMensagens.email">
+        <i class="fa fa-times"></i>
+      </span>
+
+      <span class="mensagem-erro" *ngIf="mostrarMensagens.email" [innerHTML]="mostrarMensagens.email"></span>
+    </div>
+    <!--/row-form-->
+
+    <div class="row-form relative">
+      <label i18n="@@loginSenha">Senha:</label>
+      <input type="password" class="input-form" placeholder="102030" #senha [ngClass]="{'error': erroLogin}" formControlName="senha"
+      />
+
+      <span class="icone-erro" *ngIf="mostrarMensagens.senha">
+        <i class="fa fa-times"></i>
+      </span>
+
+      <span class="mensagem-erro" *ngIf="mostrarMensagens.senha" [innerHTML]="mostrarMensagens.senha"></span>
+    </div>
+    <!--/row-form-->
+
+    <div class="text-right">
+      <button class="btn primary" type="submit" i18n="@@loginEntrar" [disabled]="!formLogin.valid || !formLogin.dirty">
+        <i class="fa fa-spinner fa-pulse" *ngIf="logando"></i>
+        Entrar
+      </button>
+    </div>
+  </form>
+</div>
+<!--/login-->

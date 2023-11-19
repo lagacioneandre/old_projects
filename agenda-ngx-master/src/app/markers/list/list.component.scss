@@ -1,0 +1,42 @@
+@import '../../../assets/styles/_default.scss';
+
+#markers {
+    padding: 25px;
+
+    .title-page {
+        display: block;
+        font-size: 18px;
+        margin: 0 0 20px;
+        color: $blue-top;
+        padding: 10px;
+        background-color: darken($white, 8%);
+    }
+
+    form {
+        .input-form {
+            float: left;
+            width: calc(100% - 40px);
+        }
+
+        .btn {
+            float: right;
+            width: 40px;
+            margin: 0;
+            height: 38px;
+        }
+    }
+
+} //#markers
+
+@media only screen and (max-width: 768px) {
+    #markers {
+        .default-table {
+            .col-actions {
+                width: 40%;
+            }
+
+        } //.default-table
+
+    } //#markers
+
+} //@media only screen and (max-width: 768px)

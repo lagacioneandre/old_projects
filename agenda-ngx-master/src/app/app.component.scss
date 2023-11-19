@@ -1,0 +1,45 @@
+@import '../assets/styles/_default';
+
+#content-application {
+    height: calc(100% - 60px);
+    overflow-y: auto;
+
+    .content-sidebar {
+        width: 250px;
+        height: calc(100% - 60px);
+        overflow-y: auto;
+        position: fixed;
+        top: 60px;
+        border-right: 1px solid lighten($default-text, 70%);
+    }
+
+    .content-app {
+        float: right;
+    }
+
+    &.menu-show {
+        .content-sidebar {
+            left: 0;
+            @include transition(all, .3s, ease-in-out);
+        }
+
+        .content-app {
+            width: calc(100% - 250px);
+            height: 100%;
+            @include transition(all, .3s, ease-in-out);
+        }
+    }
+
+    &.menu-hide {
+        .content-sidebar {
+            left: -250px;
+            @include transition(all, .3s, ease-in-out);
+        }
+
+        .content-app {
+            width: 100%;
+            @include transition(all, .3s, ease-in-out);
+        }
+    }
+
+} //#content-application

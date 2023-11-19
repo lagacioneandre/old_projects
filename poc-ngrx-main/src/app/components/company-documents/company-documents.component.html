@@ -1,0 +1,21 @@
+
+<h2>Documentos da empresa</h2>
+
+<div
+    class="alert alert-primary d-flex flex-row p-2 justify-content-between align-items-center mt-3"
+    [class.alert-primary]="!item.uploaded"
+    [class.alert-success]="item.uploaded"
+    *ngFor="let item of (documents$ | async)"
+>
+    <div>
+        <strong>{{ item.title }}</strong> <small class="ms-2" *ngIf="item.isRequired">Documento obrigatório</small>
+        <p>{{ item.description }}</p>
+    </div>
+
+    <div>
+        <i class="bi bi-check2 text-success" *ngIf="item.uploaded"></i>
+        <button class="btn btn-secondary" *ngIf="!item.uploaded" (click)="uploadDocument(item)">Enviar</button>
+    </div>
+</div>
+
+<button type="button" class="btn btn-primary" (click)="voltar()">Voltar</button>

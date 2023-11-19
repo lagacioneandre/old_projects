@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Grid Container</h1>
+    <p>
+        Para usar o grid layout precisamos definir o elemento "pai" com display grid ou inline-grid. O inline-grid torna o elemento 
+        um grid container, porém com comportamento inline.
+    </p>
+
+    <div class="mb-mt"></div>
+
+    <h1>grid-template-columns</h1>
+
+    <p>
+        Para definir o tamanho das colunas de cada elemento usamos o grid-template-column e o tamanho que cada coluna ocupara,
+        podendo ser o tamanho em px (pixels) ou em fr (frames), px é valor absoluto e fr é valor relativo, a quantidade de colunas
+        vai depender dos valores especificados pra essa propriedade, se for definido com 200px e 200px será criado duas colunas com
+        200px de tamanho, porém se mais "colunas" forem adicionadas nessa propriedade mais colunas terá o layout.
+    </p>
+    <p>grid-template-columns: 200px 200px</p>
+    <p>Mesmo que tenha espaço na tela para serem criadas mais colunas será respeitado somente o tamanho de 200px.</p>
+    <div class="content grid p-0 pb-5 pr-5" style="grid-template-columns: 200px 200px">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+    <div class="mb-mt"></div>
+    
+    <p>grid-template-columns: 200px 200px</p>
+    <p>
+        Porém se o componente pai for menor que o tamanho total da soma das duas colunas, as coluna irão exceder o tamanho do 
+        componente pai.
+    </p>
+    <div class="content grid p-0 pb-5 pr-5" style="grid-template-columns: 200px 200px; width: 300px;">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>grid-template-columns: 1fr 1fr</p>
+    <p>
+        Quando usado o valor em fr (frames) cada coluna ocupará o tamanho total do espaço destinado a elas dividido pela quantidade 
+        de colunas, esse valor será relativo e com base na quantidade de frames de cada coluna, se for usado a definição de 1fr e 2fr 
+        as colunas com 2fr ocuparam mais espaços.
+    </p>
+    <div class="content grid p-0 pb-5 pr-5" style="grid-template-columns: 1fr 1fr">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>grid-template-columns: 1fr 2fr</p>
+    <div class="content grid p-0 pb-5 pr-5" style="grid-template-columns: 1fr 2fr">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>grid-template-columns: 1fr 3fr</p>
+    <div class="content grid p-0 pb-5 pr-5" style="grid-template-columns: 1fr 3fr">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>grid-template-columns: 1fr 2fr 3fr</p>
+    <p>
+        A quantidade de colunas criada é baseada na quantidade de colunas que a propriedade grid-template-columns recebe, nesse caso 
+        está definido 3 colunas com tamanho de 1fr, 2fr e 3fr repesctivamente.
+    </p>
+    <div class="content grid p-0 pb-5 pr-5" style="grid-template-columns: 1fr 2fr 3fr">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>grid-template-columns: 1fr 2fr 3fr 4fr 5fr 6fr</p>
+    <div class="content grid p-0 pb-5 pr-5" style="grid-template-columns: 1fr 2fr 3fr 4fr 5fr 6fr">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr</p>
+    <p>
+        Quando as colunas são divididas em tamanhos de frames iguais, não importa a quantidade de frames definida, todas as colunas 
+        terão os mesmos tamanhos. Por exemplo se for definido 6 colunas cada colunas com 2fr cada, todas terão o mesmo tamanho, o 
+        mesmo acontece se for definido colunas com 9fr cada, essa definição de 9fr pra cada coluna terá o mesmo tamanho das colunas 
+        com 2fr, pois cada coluna terá o tamanho disponpivel total dividido pela quantidade de colunas.
+    </p>
+    <div class="content grid p-0 pb-5 pr-5" style="grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>grid-template-columns: 9fr 9fr 9fr 9fr 9fr 9fr</p>
+    <div class="content grid p-0 pb-5 pr-5" style="grid-template-columns: 9fr 9fr 9fr 9fr 9fr 9fr">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>grid-template-columns: 1fr 20fr</p>
+    <div class="content grid p-0 pb-5 pr-5" style="grid-template-columns: 1fr 60fr">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>grid-template-columns: 250px 1fr 50%</p>
+    <p>Também é possível definir as colunas com unidades de medidas diferentes</p>
+    <div class="content grid p-0 pb-5 pr-5" style="grid-template-columns: 250px 1fr 50%">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>grid-template-columns: minmax(200px, 500px) 1fr 2fr</p>
+    <p>
+        O valor minmax, define que tal coluna terá o tamanho mínimo de 200px e de 500px, como também pode ser outras 
+        unidades de medida, nesse caso a primeira coluna terá tamanho limitado e as outas duas tamanhos de 1fr e 2fr.
+    </p>
+    <div class="content grid p-0 pb-5 pr-5" style="grid-template-columns: minmax(200px, 500px) 1fr 2fr">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>grid-template-columns: repeat(3, 1fr)</p>
+    <p>
+        O repeat vai criar a quantidade de colunas com o tamanho definido, nesse caso serão 3 colunas com tamanho de 1fr
+    </p>
+    <div class="content grid p-0 pb-5 pr-5" style="grid-template-columns: repeat(3, 1fr)">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>grid-template-columns: repeat(auto-fit, minmax(100px, 200px))</p>
+    <p>
+        O auto-fit cria colunas com os tamanhos definidos em minmax, essas colunas ocuparão toda a linha e irá quebrar para a 
+        próxima linha quando não tiver mais espaço para ser adicionada uma nova coluna. Quando o valor máximo é um valor fixo, pode 
+        acontecer de ficar um espaço em branco no final, usando o valor máximo como auto, as colunas serão encaixadas para ocupar 
+        todo o espaço da linha e a nova coluna será criada na próxima linha. Porém essa propriedade só funciona em conjuto  com 
+        repeat e definindo um tamano min e max.
+    </p>
+    <div class="content grid p-0 pb-5 pr-5" style="grid-template-columns: repeat(auto-fit, minmax(100px, 200px))">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+        <div class="item">11</div>
+        <div class="item">12</div>
+        <div class="item">13</div>
+        <div class="item">14</div>
+        <div class="item">15</div>
+        <div class="item">16</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>grid-template-columns: repeat(auto-fit, minmax(100px, auto))</p>
+    <p>Ainda existe a propriedade auto-fill que funciona igualmente ao auto-fit</p>
+    <div class="content grid p-0 pb-5 pr-5" style="grid-template-columns: repeat(auto-fit, minmax(100px, auto))">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+        <div class="item">11</div>
+        <div class="item">12</div>
+        <div class="item">13</div>
+        <div class="item">14</div>
+        <div class="item">15</div>
+        <div class="item">16</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <h1>grid-template-rows</h1>
+
+    <p>grid-template-rows: 1fr 2fr 3fr 4fr 5fr 2fr 2fr</p>
+    <p>
+        O grid-template-rows funciona igual o grid-template-column, porém o rows defini os tamanhos das linhas
+    </p>
+    <div class="content grid p-0 pb-5 pr-5" style="grid-template-rows: 1fr 2fr 3fr 4fr 5fr 2fr 2fr">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>grid-template-rows: 1fr 2fr auto 150px e grid-template-columns: 3fr 5fr 1fr</p>
+    <p>Nesse caso foi criada a última linha com 150px de altura, mesmo esse linha não tendo nenhuma coluna.</p>
+    <div class="content grid p-0 pb-5 pr-5" style="grid-template-rows: 1fr 2fr auto 150px; grid-template-columns: 3fr 5fr 1fr">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>grid-template-rows: 1fr 2fr auto 150px e grid-template-columns: 3fr 5fr 1fr</p>
+    <p>No caso de serem criadas mais linhas do que foi definidas, a linha terá a altura do maior filho.</p>
+    <div class="content grid p-0 pb-5 pr-5" style="grid-template-rows: 1fr 2fr auto 150px; grid-template-columns: 3fr 5fr 1fr">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+        <div class="item">11</div>
+        <div class="item">12</div>
+        <div class="item">13</div>
+        <div class="item">14</div>
+        <div class="item">15</div>
+        <div class="item" style="height: 50px;">16</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>grid-template-rows: repeat(2, 50px) e grid-template-columns: 3fr 5fr 1fr</p>
+    <p>
+        Para rows o repeat também se aplica, o total de linhas criadas com determinado tamanho será o valor especificado no repeat, 
+        nesse caso as duas primeiras linhas terão a altura de 50px e as demais a altura do maior filho.
+    </p>
+    <div class="content grid p-0 pb-5 pr-5" style="grid-template-rows: repeat(2, 50px); grid-template-columns: 3fr 5fr 1fr">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+        <div class="item">11</div>
+        <div class="item">12</div>
+        <div class="item">13</div>
+        <div class="item">14</div>
+        <div class="item">15</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>grid-template-rows: repeat(3, 50px) e grid-template-columns: 1fr 1fr</p>
+    <p>
+        E caso a altura dos filhos ultrapassem o a altura da linha, o conteúdo irá extrapolar a linha. Porém isso só 
+        acontece quando as linhas são definidas com valores fixos, em px.
+    </p>
+    <div class="content grid p-0 pb-5 pr-5" style="grid-template-rows: repeat(3, 50px); grid-template-columns: 1fr 1fr">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">
+            5 <br />
+            5 <br />
+            5 <br />
+            5 <br />
+            5 <br />
+        </div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>grid-template-rows: repeat(3, 1fr) e grid-template-columns: 1fr 1fr</p>
+    <p>Nesse caso, todas as linhas terão a mesma altura da maior linha</p>
+    <div class="content grid p-0 pb-5 pr-5" style="grid-template-rows: repeat(3, 1fr); grid-template-columns: 1fr 1fr">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">
+            5 <br />
+            5 <br />
+            5 <br />
+        </div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>grid-template-rows: minmax(100px, 150px) e grid-template-columns: 1fr 1fr</p>
+    <p>
+        Quando definido o valor minmax as linhas serão criadas com alturas mínimas do mesmo valor definido para o valor máximo 
+        e a alturar máxima será a altura do maior filho. Nesse caso as linhas terão no mínimo 150px de altura.
+    </p>
+    <div class="content grid p-0 pb-5 pr-5" style="grid-template-rows: minmax(50px, 150px); grid-template-columns: 1fr 1fr">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">
+            5 <br />
+            5 <br />
+            5 <br />
+            5 <br />
+            5 <br />
+            5 <br />
+            5 <br />
+            5 <br />
+            5 <br />
+            5 <br />
+            5 <br />
+            5 <br />
+            5 <br />
+            5 <br />
+            5 <br />
+        </div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>grid-template-rows: repeat(auto-fit, minmax(100px, 150px)) e grid-template-columns: 1fr 1fr</p>
+    <p>
+        O auto-fit não se aplica para definir a altura das linhas, mesmo que o componente pai tenha uma altura definida, 
+        nesse caso as linhas seguirão a mesma regra para minmax, a altura mínima da linha é de 250px
+    </p>
+    <div class="content grid p-0 pb-5 pr-5" style="grid-template-rows: repeat(auto-fit, minmax(100px, 250px)); grid-template-columns: 1fr 1fr">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">
+            4 <br />
+            4 <br />
+            4 <br />
+        </div>
+        <div class="item">
+            5 <br />
+            5 <br />
+            5 <br />
+            5 <br />
+            5 <br />
+        </div>
+        <div class="item">6</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <h1>grid-template-areas</h1>
+
+    <p>
+        grid-template-areas: <br />
+            "logo    nav     nav    nav" <br />
+            "sidenav content advert categories" <br />
+            "sidenav footer  footer categories";
+    </p>
+    <p>
+        O grid-template-areas define os elementos como se fossem áreas, facilitando assim a estruturação da grid, poré para esse 
+        comportamento é preciso que sejam criadas as áreas no CSS, nesse caso temos as áreas, logo, nav, content, sidenav, advert, 
+        cotegories e footer, que na verdade são apenas classes, para que o CSS passe a enxerga-las como área, precisamos marcar 
+        essas classe com a propriedade grid-area e definir seus nome, por exemplo: <br />
+        .logo { <br />
+            grid-area: logo <br />
+        } <br />
+        <br />
+
+        .nav { <br />
+            grid-area: nav <br />
+        } <br />
+        <br />
+
+        E assim por diante. E para criar a grid, realmente colocamos cada área na posição desejada, montando assim nossa grid. Nesse 
+        exemplo a logo ocupa a coluna 1 da linha 1, nav ocupa as coluna 2, 3 e 4 da linha 1, sidenav ocupa a coluna 1 da linha 2, 
+        content ocupa a coluna 2 da linha 1, advert ocupa a coluna 3 da linha dois, categories ocupa a coluna 4 da linha 2, 
+        sidenav ocupa a coluna 1 da linha 3, footer ocupa as colunas 2 e 3 da linha 3 e categories ocupa a coluna 4 da linha 3.
+    </p>
+    <div class="content grid p-0 pb-5 pr-5 grid-area-1">
+        <div class="item logo">logo</div>
+        <div class="item nav">nav</div>
+        <div class="item content">content</div>
+        <div class="item sidenav">sidenav</div>
+        <div class="item advert">advert</div>
+        <div class="item categories">categories</div>
+        <div class="item footer">footer</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        grid-template-columns: 30% 60% 10%; <br />
+        grid-template-rows: 50px 150px 50px; <br />
+        grid-template-areas: <br />
+            "logo nav nav" <br />
+            "sidenav content advert" <br />
+            "sidenav footer footer" <br />
+            ;
+    </p>
+    <p>
+        Também é possível combinar o grid-template-areas com o grid-template-columns e grid-template-rows.
+    </p>
+    <div class="content grid p-0 pb-5 pr-5 grid-area-2">
+        <div class="item logo">logo</div>
+        <div class="item nav">nav</div>
+        <div class="item content">content</div>
+        <div class="item sidenav">sidenav</div>
+        <div class="item advert">advert</div>
+        <div class="item footer">footer</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        grid-template-areas: <br />
+            "logo content nav" <br />
+            ". content advert" <br />
+            "sidenav footer ." <br />
+            ;
+    </p>
+    <p>
+        E para áreas vazias, que queremos que sejam vazias, colocamos o . (ponto)
+    </p>
+    <div class="content grid p-0 pb-5 pr-5 grid-area-3">
+        <div class="item logo">logo</div>
+        <div class="item nav">nav</div>
+        <div class="item content">content</div>
+        <div class="item sidenav">sidenav</div>
+        <div class="item advert">advert</div>
+        <div class="item footer">footer</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <h1>grid-template</h1>
+
+    <p>
+        grid-template: <br />
+            "logo nav nav" 50px <br />
+            "sidenav content advert" 150px <br />
+            "sidenav footer footer" 100px <br />
+            / 100px 1fr 50px;
+    </p>
+    <p>
+        O grid-template é o atalho para a três propriedades explicadas anteriormente, grid-template-colum, grid-template-row e 
+        grid-template-area. Nesse exemplo cria a primeira linha com 50px, a segunda com 150px e a terceira com 100px. A primeira 
+        coluna com 100px, a segunda com 1fr e a terceira com 50px.
+    </p>
+    <div class="content grid p-0 pb-5 pr-5 grid-area-4">
+        <div class="item logo">logo</div>
+        <div class="item nav">nav</div>
+        <div class="item content">content</div>
+        <div class="item sidenav">sidenav</div>
+        <div class="item advert">advert</div>
+        <div class="item footer">footer</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <h1>gap</h1>
+
+    <p>gap: 20px</p>
+    <p>
+        Define o gap (espaço) entre os elementos do grid, nos exemplos anteriores foram usados margim para dar espaçamento, mas 
+        o correto é usar o gap, somente gap é o atalho para column-gap (espaço entre colunas) e row-gap (espaço entre as linhas) 
+        também é possível setar os dois valores individuais ou somente gap e em seguida o valor da outra propriedade, sobrescrevendo 
+        o valor do atalho gap
+    </p>
+    <div class="content grid grid-area-4 gap-20">
+        <div class="item logo m-0">logo</div>
+        <div class="item nav m-0">nav</div>
+        <div class="item content m-0">content</div>
+        <div class="item sidenav m-0">sidenav</div>
+        <div class="item advert m-0">advert</div>
+        <div class="item footer m-0">footer</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>gap: 20px e column-gap: 5px</p>
+    <div class="content grid grid-area-4 gap-20 column-gap-5">
+        <div class="item logo m-0">logo</div>
+        <div class="item nav m-0">nav</div>
+        <div class="item content m-0">content</div>
+        <div class="item sidenav m-0">sidenav</div>
+        <div class="item advert m-0">advert</div>
+        <div class="item footer m-0">footer</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>gap: 20px e row-gap: 5px</p>
+    <div class="content grid grid-area-4 gap-20 row-gap-5">
+        <div class="item logo m-0">logo</div>
+        <div class="item nav m-0">nav</div>
+        <div class="item content m-0">content</div>
+        <div class="item sidenav m-0">sidenav</div>
+        <div class="item advert m-0">advert</div>
+        <div class="item footer m-0">footer</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <h1>grid-auto-columns</h1>
+
+    <p>grid-auto-columns: 100px</p>
+    <p>
+        O grid-auto-columns defini um tamanho para as colunas que não foram específicadas no grid, por exemplo foram definidas 
+        2 colunas de 1fr e 2fr respectivamente, as demais colunas, caso existam, teram o tamanho de 100px. Nesse exemplo o 
+        sexto elemento força a criação de 5 colunas, pois o mesmo está definido como grid-column: 5.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: 1fr 2fr; grid-auto-columns: 100px;">
+        <div class="item m-0">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0 item-6">6</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <h1>grid-auto-rows</h1>
+
+    <p>grid-auto-rows: 100px</p>
+    <p>
+        O grid-auto-rows funciona da mesma forma que o grid-auto-column, porém para linhas. Neste exemplo as linhas que não 
+        foram definidas terão o tamando de 100px.
+    </p>
+    <div class="content grid gap-5" style="grid-template-rows: 1fr 1fr; grid-auto-rows: 100px;">
+        <div class="item m-0">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0">6</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <h1>grid-auto-flow</h1>
+    
+    <p>Define o fluxo dos itens no grid, se os itens irão gerar novas linhas ou novas colunas.</p>
+
+    <p>grid-auto-flow: row</p>
+    <p>O grid-auto-flow: row gera automaticamente novas linhas</p>
+    <div class="content grid gap-5" style="grid-auto-flow: row">
+        <div class="item m-0">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0">6</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>grid-auto-flow: column</p>
+    <p>O grid-auto-flow: column gera automaticamente novas colunas</p>
+    <div class="content grid gap-5" style="grid-auto-flow: column">
+        <div class="item m-0">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0">6</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>grid-auto-flow: dense</p>
+    <p>
+        O grid-auto-flow: dense tenta posicionar o máximo de elementos que existirem nas primeiras partes do grid, esse 
+        valor pode desorganizar o conteúdo. A definição do grid ficou grid-template-columns: 1fr 1fr 1fr; grid-auto-flow: dense;
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: 1fr 1fr 1fr; grid-auto-flow: dense;">
+        <div class="item m-0">1</div>
+        <div class="item m-0 span-3">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0 span-3">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <h1>grid</h1>
+    
+    <p>
+        Atalho geral para definri o grid: grid-template-rows, grid-template-columns, grid-template-areas, grid-auto-rows, 
+        grid-auto-columns e grid-auto-flow.
+        
+        <br />
+        <br />
+
+        grid: 100px / 1fr 1fr <br />
+        Gera uma linha com 100px de altura e 2 colunas com 1fr.
+
+        <br />
+        <br />
+
+        grid: 100px / auto-flow 100px 50px <br />
+        Gera uma linha com 100px de altura. O grid-auto-flow é definido como column (pois está logo antes da definição das colunas). 
+        Ele também define o grid-auto-columns com 100px 50px
+
+        <br />
+        <br />
+
+        grid: <br />
+            "logo    nav     nav" 50px <br />
+            "sidenav content advert" 150px <br />
+            "sidenav footer  footer" 100px <br />
+            / 100px 1fr 50px; <br />
+        Define as áreas, cria a priemira linha com 50px, a segunda com 150px e a terceira com 100px. Já as colunas são criadas com 
+        100px a primeira, 1fr a segunda e 50px a terceira.
+    </p>
+
+    <div class="mb-mt"></div>
+
+    <h1>justify-content</h1>
+    
+    <p>Justifica os itens do grid na horizontal, muito útil quando as colunas não ocupam o tamanho total do componente pai.</p>
+    <p>
+        justify-content: start <br />
+        Justifica os itens ao início. Esse é o padrão.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 250px); justify-content: start">
+        <div class="item m-0">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        justify-content: end <br />
+        Justifica os itens ao final.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 250px); justify-content: end">
+        <div class="item m-0">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        justify-content: stretch <br />
+        Estica os itens.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: auto; justify-content: stretch">
+        <div class="item m-0">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0 span-2">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0 span-2">5</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0 span-2">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        justify-content: space-around <br />
+        Distribui espaço entre os elementos. (O início e final são menores que os espaços internos).
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 250px); justify-content: space-around">
+        <div class="item m-0">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        justify-content: space-between <br />
+        Cria um espaço entre os elementos, ignorando o início e final.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 250px); justify-content: space-between">
+        <div class="item m-0">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        justify-content: space-evenly <br />
+        Cria um espaço igual entre as colunas (no início e final também).
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 250px); justify-content: space-evenly">
+        <div class="item m-0">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        justify-content: center <br />
+        Centraliza o conteúdo.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 250px); justify-content: center">
+        <div class="item m-0">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <h1>align-content</h1>
+    
+    <p>Alinha os itens na vertical, porém só vai funcionar quando o componente pai tem que ter um tamanho fixo.</p>
+    <p>
+        align-content: start <br />
+        Alinha os itens ao início. Esse é o padrão.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 250px); align-content: start; height: 250px">
+        <div class="item m-0">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        align-content: end <br />
+        Alinha os itens ao final.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 250px); align-content: end; height: 250px">
+        <div class="item m-0">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        align-content: stretch <br />
+        Estica os itens.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 250px); align-content: stretch; height: 250px">
+        <div class="item m-0">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        align-content: space-around <br />
+        Distribui espaço entre os elementos. (O início e final são menores que os espaços internos).
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 250px); align-content: space-around; height: 250px">
+        <div class="item m-0">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        align-content: space-between <br />
+        Cria um espaço entre os elementos, ignorando o início e final.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 250px); align-content: space-between; height: 250px">
+        <div class="item m-0">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        align-content: space-evenly <br />
+        Cria um espaço igual entre as colunas (no início e final também).
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 250px); align-content: space-evenly; height: 250px">
+        <div class="item m-0">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        align-content: center <br />
+        Centraliza o conteúdo.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 250px); align-content: center; height: 250px">
+        <div class="item m-0">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <h1>justify-items</h1>
+
+    <p>
+        Justifica os itens na horizontal, porém esse alinhamento é perante a coluna. Os elementos serão forçados a ocupar somente o 
+        tamanho do conteúdo e não a coluna toda.
+    </p>
+
+    <p>
+        justify-items: start <br />
+        Justifica os itens ao início.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 50px); justify-items: start">
+        <div class="item m-0">1111111</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">55555</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        justify-items: end <br />
+        Justifica os itens ao final.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 50px); justify-items: end">
+        <div class="item m-0">1111111</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">55555</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        justify-items: center <br />
+        Centraliza os itens ao centro.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 50px); justify-items: center">
+        <div class="item m-0">1111111</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">55555</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        justify-items: stretch <br />
+        Estica os itens. Esse é o valor padrão quando não é definido o justify-items.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 50px); justify-items: stretch">
+        <div class="item m-0">1111111</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">55555</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <h1>align-items</h1>
+
+    <p>
+        Alinha os itens na vertical, porém esse alinhamento é perante a linha. Os elementos serão forçados a ocupar somente o 
+        tamanho do conteúdo e não a linha toda.
+    </p>
+
+    <p>
+        align-items: start <br />
+        Alinha os itens ao início.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 100px); align-items: start">
+        <div class="item m-0">1111111</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">55555</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        align-items: end <br />
+        Alinha os itens ao final.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 100px); align-items: end">
+        <div class="item m-0">1111111</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">55555</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        align-items: center <br />
+        Alinha os itens ao centro.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 100px); align-items: center">
+        <div class="item m-0">1111111</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">55555</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        align-items: stretch <br />
+        Estica os itens. Esse é o valor padrão quando não é definido o align-items.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 100px); align-items: stretch">
+        <div class="item m-0">1111111</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">55555</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <h1>grid-column</h1>
+
+    <p>
+        Define quais colunas o item vai ocupar, é possível definir onde o item começa e termina, sendo possível ocupar mais de 
+        uma coluna
+    </p>
+
+    <p>
+        grid-column: 2 <br />
+        O item ocupará a coluna 2. Sim, o item irá ocupar a coluna 2, ele não ocupará duas colunas.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 1fr); grid-auto-rows: 50px">
+        <div class="item m-0" style="grid-column: 2;">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        grid-column: 1 / 3 <br />
+        Aqui está sendo definido onde o item vai começar e onde ele vai parar, começa na coluna 1 e para na coluna 3, 
+        ou seja vai ocupar 2 colunas, sim, o item vai até a coluna 3, mas ele não ocupa a coluna 3. Vai pegar as colunas 
+        1 e 2. Se o ponto de parada for mais que a quantida de colunas, será forçado que o grid tenha a quantidade de 
+        colunas específicada para o ponto de parada.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 1fr); grid-auto-rows: 50px">
+        <div class="item m-0" style="grid-column: 1 / 3;">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        grid-column-start: 2 <br />
+        O grid-column-start é a forma verbosa de se declarar o início do grid-column. Como não foi definido um ponto de 
+        parada, o item irá ocupar somente uma coluna. Se o ponto inicial for maior que a quantidade de colunas de grid, o grid 
+        será forçado a ter a quantidade de colunas especificada por essa propriedade.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 1fr); grid-auto-rows: 50px">
+        <div class="item m-0" style="grid-column: 2;">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        grid-column-end: 3 <br />
+        O grid-column-end é a forma verbosa de se declarar o início do grid-column. Como não foi definido um ponto de 
+        inicio, o item irá ocupar somente uma coluna. Se o ponto final for maior que a quantidade de colunas de grid, o grid 
+        será forçado a ter a quantidade de colunas especificada por essa propriedade.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 1fr); grid-auto-rows: 50px">
+        <div class="item m-0" style="grid-column: 3;">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        grid-column: span 2 <br />
+        O item ocupara duas colunas a partir de sua posição. Se a quantidade de colunas a ser ocupada for maior que a quantidade 
+        de colunas de grid, o grid será forçado a ter a quantidade de colunas especificada por essa propriedade.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 1fr); grid-auto-rows: 50px">
+        <div class="item m-0" style="grid-column: span 3;">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0" style="grid-column: span 5;">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <h1>grid-row</h1>
+
+    <p>Funciona igualmente ao grid-column, porém para as linhas.</p>
+
+    <p>
+        grid-row: 2<br />
+        O item ocupará a linha 2. Sim, o item irá ocupar a linha 2, ele não ocupará duas colunas.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 1fr); grid-auto-rows: 50px">
+        <div class="item m-0" style="grid-row: 2; color: white; font-size: 28px;">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        grid-row: 1 / 3 <br />
+        Aqui está sendo definido onde o item vai começar e onde ele vai parar, começa na linha 1 e para na linha 3, 
+        ou seja vai ocupar 2 linhas, sim, o item vai até a linha 3, mas ele não ocupa a linha 3. Vai pegar as linhas 
+        1 e 2. Se o ponto de parada for mais que a quantida de linhas, será forçado que o grid tenha a quantidade de 
+        linhas específicada para o ponto de parada.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 1fr); grid-auto-rows: 50px">
+        <div class="item m-0" style="grid-row: 1 / 3;">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        grid-row-start: 2 <br />
+        O grid-row-start é a forma verbosa de se declarar o início do grid-row. Como não foi definido um ponto de 
+        parada, o item irá ocupar somente uma linha. Se o ponto inicial for maior que a quantidade de linhas de grid, o grid 
+        será forçado a ter a quantidade de linhas especificada por essa propriedade.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 1fr); grid-auto-rows: 50px">
+        <div class="item m-0" style="grid-row: 2; color: white; font-size: 28px;">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        grid-row-end: 3 <br />
+        O grid-row-end é a forma verbosa de se declarar o início do grid-row. Como não foi definido um ponto de 
+        inicio, o item irá ocupar somente uma linha. Se o ponto final for maior que a quantidade de linhas de grid, o grid 
+        será forçado a ter a quantidade de linhas especificada por essa propriedade.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 1fr); grid-auto-rows: 50px">
+        <div class="item m-0" style="grid-row: 3; color: white; font-size: 28px;">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <p>
+        grid-row: span 2 <br />
+        O item ocupara duas linhas a partir de sua posição. Se a quantidade de linhas a ser ocupada for maior que a quantidade 
+        de linhas de grid, o grid será forçado a ter a quantidade de linhas especificada por essa propriedade.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 1fr); grid-auto-rows: 50px">
+        <div class="item m-0" style="grid-row: span 3;">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0" style="grid-row: span 5;">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+
+    <h1>grid-area</h1>
+
+    <p>
+        Define a área do item do grid, é um atalho para as propriedades grid-row-start, grid-row-end, grid-column-start e  
+        grid-column-end. O z-index pode ser usado para manipular a posição do eixo Z do item, fazendo com que um item possa ser 
+        posicionado em cima do outro.
+    </p>
+
+    <p>
+        grid-area: 1 / 2 / 4 / 3; <br />
+        Este é um atalho para: <br />
+        grid-row-start: 1; <br />
+        grid-column-start: 2; <br />
+        grid-row-end: 4; <br />
+        grid-column-end: 3;
+    </p>
+    <div class="content grid gap-5 grid-area-5" style="width: 500px;">
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+        <div class="item">11</div>
+        <div class="item item-12">12</div>
+        <div class="item">13</div>
+        <div class="item">14</div>
+        <div class="item">15</div>
+        <div class="item">16</div>
+        <div class="item">17</div>
+        <div class="item">18</div>
+        <div class="item">19</div>
+        <div class="item">20</div>
+    </div>
+
+    <div class="mb-mt"></div>
+    
+    <h1>justify-self</h1>
+
+    <p>Justifica o item em relação a célula na horizontal.</p>
+
+    <p>
+        justify-self: start <br />
+        Justifica o item ao início.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 1fr); grid-auto-rows: 50px">
+        <div class="item m-0" style="justify-self: start">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0" style="justify-self: start">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+    
+    <p>
+        justify-self: end <br />
+        Justifica o item ao final.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 1fr); grid-auto-rows: 50px">
+        <div class="item m-0" style="justify-self: end">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0" style="justify-self: end">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+    
+    <p>
+        justify-self: center <br />
+        Centraliza o item ao final.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 1fr); grid-auto-rows: 50px">
+        <div class="item m-0" style="justify-self: center">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0" style="justify-self: center">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+    
+    <p>
+        justify-self: stretch <br />
+        Estica o item ao final. Comportamento padrão quando não foi definido justify-self.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 1fr); grid-auto-rows: 50px">
+        <div class="item m-0" style="justify-self: stretch">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0" style="justify-self: stretch">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+    
+    <h1>align-self</h1>
+
+    <p>Justifica o item em relação a célula na vertical.</p>
+
+    <p>
+        align-self: start <br />
+        Justifica o item ao início.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 1fr); grid-auto-rows: 50px">
+        <div class="item m-0" style="align-self: start">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0" style="align-self: start">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+    
+    <p>
+        align-self: end <br />
+        Justifica o item ao final.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 1fr); grid-auto-rows: 50px">
+        <div class="item m-0" style="align-self: end">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0" style="align-self: end">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+    
+    <p>
+        align-self: center <br />
+        Centraliza o item ao final.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 1fr); grid-auto-rows: 50px">
+        <div class="item m-0" style="align-self: center">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0" style="align-self: center">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+    <div class="mb-mt"></div>
+    
+    <p>
+        align-self: stretch <br />
+        Estica o item ao final. Comportamento padrão quando não foi definido align-self.
+    </p>
+    <div class="content grid gap-5" style="grid-template-columns: repeat(3, 1fr); grid-auto-rows: 50px">
+        <div class="item m-0" style="align-self: stretch">1</div>
+        <div class="item m-0">2</div>
+        <div class="item m-0">3</div>
+        <div class="item m-0">4</div>
+        <div class="item m-0">5</div>
+        <div class="item m-0" style="align-self: stretch">6</div>
+        <div class="item m-0">7</div>
+        <div class="item m-0">8</div>
+        <div class="item m-0">9</div>
+    </div>
+
+</body>
+</html>

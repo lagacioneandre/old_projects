@@ -1,0 +1,207 @@
+@import '../../../../assets/styles/_default';
+
+.fixed {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.backdrop {
+    background-color: $black;
+    z-index: 50;
+    opacity: .4;
+    @extend.fixed;
+}
+
+.content-details {
+    z-index: 55;
+    @extend.flex-center;
+    @extend.fixed;
+
+    .center {
+        background-color: $white;
+        width: 60%;
+        max-width: 60%;
+        overflow: hidden;
+        box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, .5);
+
+        .header {
+            padding: 10px 15px;
+            box-shadow: 0 0 2px 1px rgba(0, 0, 0, .5);
+
+            .image {
+                width: 50px;
+                height: 50px;
+                border: 2px solid $border-btn-default;
+                float: left;
+                margin: 0 15px 0 0;
+                overflow: hidden;
+                border-radius: 50%;
+
+                .letter {
+                    @extend.flex-center;
+                    font-size: 18px;
+                    color: $white;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .name {
+                font-size: 18px;
+                color: $default-text;
+                line-height: 50px;
+                float: left;
+                font-weight: bold;
+            }
+
+            .actions-list {
+                margin: 10px 0 0;
+
+                li {
+                    display: inline-block;
+                }
+
+                .btn-action {
+                    width: 35px;
+                    height: 35px;
+                    border: 0;
+                    background-color: transparent;
+                    font-size: 14px;
+                    color: $default-text;
+                    cursor: pointer;
+                    border-radius: 50%;
+
+                    &:hover {
+                        background-color: darken($white, 10%);
+                    }
+                }
+
+            } //.actions-list
+
+        } //.header
+
+        .content {
+            padding: 15px;
+            max-height: calc(100% - 70px);
+            overflow-y: auto;
+
+            .title {
+                font-size: 15px;
+                color: $default-text;
+                display: block;
+                margin: 0 0 10px;
+                font-weight: bold;
+            }
+
+            .details-list {
+                margin: 0 0 20px;
+                padding: 0 0 0 15px;
+
+                li {
+                    margin: 0 0 10px;
+                    font-size: 13px;
+                    color: $default-text;
+
+                    .icon {
+                        display: inline-block;
+                        width: 35px;
+                        color: $border-btn-default;
+                        font-size: 15px;
+
+                        &.favorite {
+                            color: $favorite
+                        }
+                    }
+
+                } //li
+
+            } //.details-list
+
+            p {
+                font-size: 13px;
+                color: $default-text;
+                padding: 0 0 0 15px;
+            }
+
+        } //.content
+
+    } //.center
+
+} //.content-details
+
+@media only screen and (max-width: 768px) {
+    .content-details {
+        .center {
+            width: 90%;
+            height: 90%;
+            max-width: 90%;
+            max-width: 90%;
+
+            .header {
+                position: relative;
+                text-align: center;
+
+                .image {
+                    width: 80px;
+                    height: 80px;
+                    float: none;
+                    margin: 0 auto 15px;
+                }
+
+                .name {
+                    display: block;
+                    float: none;
+                    line-height: 18px;
+                }
+
+                .content-left,
+                .content-right {
+                    float: none;
+                    width: 100%;
+                    position: initial !important;
+                }
+
+                .actions-list {
+                    li {
+                        &:last-child {
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                        }
+                    }
+
+                } //.actions-list
+
+            } //.header
+
+            .content {
+                .details-list {
+                    padding: 0;
+
+                    li {
+                        .icon {
+                            width: 20px;
+                        }
+                    }
+
+                    p {
+                        padding: 0;
+                    }
+                }
+
+            } //.content
+
+        } //.center
+
+    } //.content-details 
+
+} //@media only screen and (max-width: 768px)

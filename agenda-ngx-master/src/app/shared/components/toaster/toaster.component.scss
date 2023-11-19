@@ -1,0 +1,61 @@
+@import '../../../../assets/styles/_default';
+
+#toaster-component {
+    position: fixed;
+    padding: 15px;
+    right: 0;
+    top: 0;
+    z-index: 10000;
+
+    .toaster {
+        width: 300px;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px 2px $toaster-shadow;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+        font-size: 14px;
+        cursor: pointer;
+        margin: 0 0 10px;
+
+        .icon {
+            width: 10%;
+            font-size: 18px;
+        }
+
+        .col-texto {
+            width: 90%;
+            padding: 0 0 0 10px;
+
+            .titulo {
+                font-weight: bold;
+                display: block;
+                margin: 0 0 5px;
+            }
+        }
+
+        &:hover {
+            box-shadow: 0 0 5px 4px $toaster-shadow;
+        }
+
+        &.success {
+            background-color: $toaster-success;
+        }
+
+        &.info {
+            background-color: $toaster-info;
+        }
+
+        &.warning {
+            background-color: $toaster-warning;
+        }
+
+        &.error {
+            background-color: $toaster-error;
+        }
+    
+    } //.toaster
+
+} //#toaster-component

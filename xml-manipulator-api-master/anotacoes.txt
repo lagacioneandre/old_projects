@@ -1,0 +1,20 @@
+Toda classe tem que ser anotada com o paramêtro @XmlRootElement(name = "infDoc"), caso a mesma será parte do XML, cada propriedade dessa classe que será parte do XML
+será anotada com o parâmetro @XmlElement(name = "DT"). Caso essa clase for fazer parte do XML também ela terá que ser anotada com o parâmetro @XmlAccessorType(XmlAccessType.FIELD).
+
+Passos
+1 - Construir um upload para o arquivo XML = OK
+2 - Converter esse XML em objeto e salvar no mongo = OK
+3 - Usar o XMLMapper = OK
+4 - Buscar esses documentos e lista-los = OK
+
+=====================================================================
+=====================================================================
+
+A PARTIR DESSE PONTO É DIFERENTE DO QUE JÁ TEM FEITO, É UMA FUNCIONALIDADE A PARTE
+
+5 - Adicionar ou remover uma tag do XML
+6 - Alterar um valor de alguma tag e tbm da tag criada, para isso precisa usar o Xpath, o mesmo pega o XML enviado e passa para string, e mapeia os nós desses XML, através desse mapeamento
+    adicionar ou remover a tag no local desejado.
+7 - Mostrar na tela o XML salvo, em todos os casos.
+
+Para editar um documento, não precisa mais enviar para o front todo o documento, somente o id do documento que será alterado, assim no back busca esse documento por id e faz todo o processo já existente

@@ -1,0 +1,14 @@
+<app-header (controlMenu)="onControlMenu()"></app-header>
+
+<main id="content-application" class="clearfix" [ngClass]="{'menu-show': showMenu, 'menu-hide': !showMenu}">
+  <div class="content-sidebar">
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <div class="content-app">
+    <router-outlet></router-outlet>
+  </div>
+</main>
+
+<app-loader></app-loader>
+<app-contact-details></app-contact-details>

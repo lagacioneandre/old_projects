@@ -1,0 +1,73 @@
+<header id="top">
+  <button class="menu-button left" (click)="toggleMenu()">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </button>
+  
+  <button class="menu-button left" (click)="toggleMobileSearch()" *ngIf="searchMobile">
+    <i class="fa fa-search" aria-hidden="true"></i>
+  </button>
+
+  <h1 class="title left" i18n="@@tituloDaAplicacao">Contatos</h1>
+
+  <div class="form-box left relative" [ngClass]="{'searchMobile': searchMobile}" [hidden]="searchMobile && !showSearchMobile">
+    <form id="search" class="clearfix relative">
+      <button type="submit" class="button-search left">
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </button>
+
+      <input type="text" class="text-search" name="search" placeholder="Pesquisar pelo nome" autocomplete="off"
+        [(ngModel)]="inputSearchModel" (keyup)="search()" i18n-placeholder="@@placeholderPesquisar" />
+
+      <button type="button" class="clear-search" *ngIf="inputSearchModel.length" (click)="clearInput()">
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </button>
+
+      <span class="loading-search">
+        <i class="fa fa-spinner fa-pulse fa-fw"></i>
+      </span>
+    </form>
+
+    <div class="result-search" *ngIf="contactsForSearch.length">
+      <div class="row-result clearfix" *ngFor="let contact of contactsForSearch" (click)="showDetails(contact)">
+        <div class="thumb left">
+          <img src="{{ contact.linkImagem }}" alt="{{ contact.nomeContato }}" class="full-img" *ngIf="contact.linkImagem" />
+          <span class="letter" *ngIf="!contact.linkImagem" [ngStyle]="{ 'background-color': contact.imgColor }">{{ contact.nomeContato.substr(0, 1) }}</span>
+        </div>
+
+        <strong class="name">{{ contact.nomeContato }} - </strong>
+        <span class="email">{{ contact.emailContato }}</span>
+      </div>
+      <!--/row-result-->
+    </div>
+    <!--/result-search-->
+  </div>
+  <!--/form-box-->
+
+  <div class="user-menu right relative">
+    <div class="thumb" (click)="showUserMenu($event)">
+      <img src="assets/images/goku.jpg" alt="" class="full-img" />
+    </div>
+
+    <div class="content-menu" [ngClass]="{'showContent': contentControl, 'hiddeContent': !contentControl}">
+      <div class="center clearfix">
+        <div class="main-thumb left relative">
+          <img src="assets/images/goku.jpg" alt="" class="full-img" />
+          <span class="change" i18n="@@alterarImagemUsuarioTopo">Alterar</span>
+        </div>
+
+        <div class="user-info">
+          <strong class="name">{{ userName || '-' }}</strong>
+          <p class="email">{{ userEmail }}</p>
+          <button type="button" class="account" i18n="@@linkMinhaConta">Minha conta</button>
+        </div>
+      </div>
+      <!--/center-->
+
+      <div class="bottom text-right">
+        <button type="button" class="out" i18n="@@linkSair">Sair</button>
+      </div>
+    </div>
+    <!--/content-menu-->
+  </div>
+  <!--/user-meu-->
+</header>

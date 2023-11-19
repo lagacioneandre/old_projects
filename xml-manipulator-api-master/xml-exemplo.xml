@@ -1,0 +1,181 @@
+<xml>
+    <cteProc versao="3.00" 
+        xmlns="http://www.portalfiscal.inf.br/cte">
+        <CTe xmlns="http://www.portalfiscal.inf.br/cte">
+            <infCte Id="CTe32200102913489000541570030018046101000000012" versao="3.00">
+                <ide>
+                    <cUF>32</cUF>
+                    <cCT>00000001</cCT>
+                    <CFOP>5353</CFOP>
+                    <natOp>Prestacao de servico de transporte a estabelecimento comerc</natOp>
+                    <mod>57</mod>
+                    <serie>3</serie>
+                    <nCT>1804610</nCT>
+                    <dhEmi>2020-01-07T18:23:40-03:00</dhEmi>
+                    <tpImp>1</tpImp>
+                    <tpEmis>1</tpEmis>
+                    <cDV>2</cDV>
+                    <tpAmb>1</tpAmb>
+                    <tpCTe>0</tpCTe>
+                    <procEmi>0</procEmi>
+                    <verProc>1</verProc>
+                    <cMunEnv>3201308</cMunEnv>
+                    <xMunEnv>CARIACICA</xMunEnv>
+                    <UFEnv>ES</UFEnv>
+                    <modal>01</modal>
+                    <tpServ>0</tpServ>
+                    <cMunIni>3201308</cMunIni>
+                    <xMunIni>CARIACICA</xMunIni>
+                    <UFIni>ES</UFIni>
+                    <cMunFim>3205200</cMunFim>
+                    <xMunFim>VILA VELHA</xMunFim>
+                    <UFFim>ES</UFFim>
+                    <retira>1</retira>
+                    <indIEToma>1</indIEToma>
+                    <toma3>
+                        <toma>0</toma>
+                    </toma3>
+                </ide>
+                <compl>
+                    <xCaracAd>Normal</xCaracAd>
+                    <xObs>CAPA: 78545 //- MAPA: 745878 //- ORIGEM: PROMAX //- LEI DA TRANSPARENCIA: O VALOR APROXIMADO DE TRIBUTOS INCIDENTES SOBRE O PRECO DESTE SERVICO E DE R$ 35,21 //- MOTORISTA: FADEL02 //- PLACA: REC-0001 //- MOTORISTA: 05216595740 //-</xObs>
+                    <ObsCont xCampo="Capa">
+                        <xTexto>78545</xTexto>
+                    </ObsCont>
+                </compl>
+                <emit>
+                    <CNPJ>02913489000541</CNPJ>
+                    <IE>082211000</IE>
+                    <xNome>FADEL TRANSPORTES E LOGISTICA LTDA</xNome>
+                    <xFant>FADEL VITORIA</xFant>
+                    <enderEmit>
+                        <xLgr>ROD DO CONTORNO</xLgr>
+                        <nro>S/N</nro>
+                        <xBairro>TABAJARA</xBairro>
+                        <cMun>3201308</cMun>
+                        <xMun>CARIACICA</xMun>
+                        <CEP>29154501</CEP>
+                        <UF>ES</UF>
+                    </enderEmit>
+                </emit>
+                <rem>
+                    <CNPJ>07526557001181</CNPJ>
+                    <IE>082973016</IE>
+                    <xNome>AMBEV S.A. - CDD VITORIA</xNome>
+                    <xFant>CDD VIANA</xFant>
+                    <enderReme>
+                        <xLgr>ROD GOVERNADOR MARIO COVAS</xLgr>
+                        <nro>SN</nro>
+                        <xCpl>KM 290</xCpl>
+                        <xBairro>SERRA DO ANIL</xBairro>
+                        <cMun>3201308</cMun>
+                        <xMun>CARIACICA</xMun>
+                        <CEP>29147030</CEP>
+                        <UF>ES</UF>
+                        <cPais>1058</cPais>
+                        <xPais>BRASIL</xPais>
+                    </enderReme>
+                </rem>
+                <dest>
+                    <CNPJ>01928075006300</CNPJ>
+                    <IE>082240582</IE>
+                    <xNome>DMA DISTRIBUIDORA SA</xNome>
+                    <enderDest>
+                        <xLgr>AV   SANTA LEOPOLDINA</xLgr>
+                        <nro>SN</nro>
+                        <xBairro>PRAIA DE ITAPARICA</xBairro>
+                        <cMun>3205200</cMun>
+                        <xMun>VILA VELHA</xMun>
+                        <CEP>29102040</CEP>
+                        <UF>ES</UF>
+                        <cPais>1058</cPais>
+                        <xPais>BRASIL</xPais>
+                    </enderDest>
+                </dest>
+                <vPrest>
+                    <vTPrest>293.44</vTPrest>
+                    <vRec>293.44</vRec>
+                    <Comp>
+                        <xNome>FRETE VALOR</xNome>
+                        <vComp>258.23</vComp>
+                    </Comp>
+                </vPrest>
+                <imp>
+                    <ICMS>
+                        <ICMS00>
+                            <CST>00</CST>
+                            <vBC>293.44</vBC>
+                            <pICMS>12.00</pICMS>
+                            <vICMS>35.21</vICMS>
+                        </ICMS00>
+                    </ICMS>
+                </imp>
+                <infCTeNorm>
+                    <infCarga>
+                        <vCarga>3023.97</vCarga>
+                        <proPred>BRAHMA CHOPP 300ML</proPred>
+                        <infQ>
+                            <cUnid>01</cUnid>
+                            <tpMed>PESO BRUTO</tpMed>
+                            <qCarga>979.2000</qCarga>
+                        </infQ>
+                        <vCargaAverb>3023.97</vCargaAverb>
+                    </infCarga>
+                    <infDoc>
+                        <infNFe>
+                            <chave>32200107526557001181550260002808671777968919</chave>
+                        </infNFe>
+                    </infDoc>
+                    <infModal versaoModal="3.00">
+                        <rodo>
+                            <RNTRC>00714123</RNTRC>
+                        </rodo>
+                    </infModal>
+                </infCTeNorm>
+                <autXML>
+                    <CNPJ>04898488000177</CNPJ>
+                </autXML>
+                <infRespTec>
+                    <CNPJ>02913489002080</CNPJ>
+                    <xContato>Marcio Nunes Casanova Conceicao</xContato>
+                    <email>marcio.casanova@hbsis.com.br</email>
+                    <fone>4721235400</fone>
+                </infRespTec>
+            </infCte>
+            <infCTeSupl>
+                <qrCodCTe><![CDATA[https://dfe-portal.svrs.rs.gov.br/cte/qrCode?chCTe=32200102913489000541570030018046101000000012&tpAmb=1]]></qrCodCTe>
+            </infCTeSupl>
+            <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+                <SignedInfo>
+                    <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                    <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+                    <Reference URI="#CTe32200102913489000541570030018046101000000012">
+                        <Transforms>
+                            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                        </Transforms>
+                        <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                        <DigestValue>OEhPYsph6/E81clHx/i4ufAHcvc=</DigestValue>
+                    </Reference>
+                </SignedInfo>
+                <SignatureValue>Hxuh4ipp+UIpkk2EmcYYX4D8ZeT1kl1nP8+wTWStScXH6b6y7D+AzjzFqSoJ8EZ6TDegYE15Rk+j 6xHqXvcfU/NvkkZGLk8j3fgE9XOYdHN4jtCi6w9w0pNIXzyqiCBPS07ekQpNuQrtcbZvNzEaM6F8 pfT6pW9DeGV6ZS79x+afLPS0cI9p7zmC08rskQ0FwZJ3J9L+e//FTuWJlKnzqEIBe2REg2y7I0So EXbpHQgQgAbIEPZ4wbk+rLFU5RoD/huZBaJjjCopO7GrpVEIrocaZXxclbOyVJi+gITLg06J/zjw XVbYZl67je4WksX75VWJgiLcreIhQu1JiHzmuQ==</SignatureValue>
+                <KeyInfo>
+                    <X509Data>
+                        <X509Certificate>MIIH7TCCBdWgAwIBAgIQMr1TyrhVV98MyrOIOH7lwjANBgkqhkiG9w0BAQsFADB1MQswCQYDVQQG EwJCUjETMBEGA1UEChMKSUNQLUJyYXNpbDE2MDQGA1UECxMtU2VjcmV0YXJpYSBkYSBSZWNlaXRh IEZlZGVyYWwgZG8gQnJhc2lsIC0gUkZCMRkwFwYDVQQDExBBQyBTSU5DT1IgUkZCIEc1MB4XDTE5 MDgyMjIwMzQ1NloXDTIwMDgyMTIwMzQ1NlowgeQxCzAJBgNVBAYTAkJSMRMwEQYDVQQKDApJQ1At QnJhc2lsMQswCQYDVQQIDAJTUDEOMAwGA1UEBwwFVGF0dWkxNjA0BgNVBAsMLVNlY3JldGFyaWEg ZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEWMBQGA1UECwwNUkZCIGUtQ05QSiBB MTEXMBUGA1UECwwONTYyODI5MjQwMDAxODIxOjA4BgNVBAMMMUZBREVMIFRSQU5TUE9SVEVTIEUg TE9HSVNUSUNBIExUREE6MDI5MTM0ODkwMDAxMTgwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK AoIBAQDT6rtTzGXL0vKsrFQf6lc70DR23GMjDtZEPA8yQUp88csJg7PDmmVwXvMOiOgseLEEqTi3 rq+iD/DlBa6wnOPDgbKSv9q60ZmrWqIbpxNgwPWTbWoVSsOha9DbEuw9hwrOTTN7e7XZWM4IG3xE RG26VAKAzMLqeho+DvgrtPhfgdi0/onAP7dNqmBqWwTs2u3A0vl8c2ZGZ0dT9HXmIKhcIhS/BK6a aTWQU/pj18vpzfhhY/Kv49Ds28tghXwQxsaKnR2nFO4vza+DWUMcm0ATEF72TDZ4AxcKS4tAgBtG ql23T8R79SNa3Dfglz4QKTBKFqMwdfNelGBrYWmHh1gjAgMBAAGjggMHMIIDAzCBygYDVR0RBIHC MIG/oD0GBWBMAQMEoDQEMjAzMDMxOTQyMDQxNzE3MjE4NDkwMDAwMDAwMDAwMDAwMDAwMDAyNzQx MjkxWFNTUFNQoCEGBWBMAQMCoBgEFlNFUkdJTyBRVUVJUk9aIFNBUlRPUkmgGQYFYEwBAwOgEAQO MDI5MTM0ODkwMDAxMTigFwYFYEwBAwegDgQMMDAwMDAwMDAwMDAwgSdhdWd1c3RvLmFudHVuZXNA ZmFkZWx0cmFuc3BvcnRlcy5jb20uYnIwCQYDVR0TBAIwADAfBgNVHSMEGDAWgBRn50IRvvI4BhVJ D4f/2gXeXY6UIjB4BgNVHSAEcTBvMG0GBmBMAQIBHDBjMGEGCCsGAQUFBwIBFlVodHRwOi8vaWNw LWJyYXNpbC5hY3NpbmNvci5jb20uYnIvcmVwb3NpdG9yaW8vZHBjL0FDX1NJTkNPUl9SRkIvRFBD X0FDX1NJTkNPUl9SRkIucGRmMIG2BgNVHR8Ega4wgaswVKBSoFCGTmh0dHA6Ly9pY3AtYnJhc2ls LmNlcnRpc2lnbi5jb20uYnIvcmVwb3NpdG9yaW8vbGNyL0FDU0lOQ09SUkZCRzUvTGF0ZXN0Q1JM LmNybDBToFGgT4ZNaHR0cDovL2ljcC1icmFzaWwub3V0cmFsY3IuY29tLmJyL3JlcG9zaXRvcmlv L2xjci9BQ1NJTkNPUlJGQkc1L0xhdGVzdENSTC5jcmwwDgYDVR0PAQH/BAQDAgXgMB0GA1UdJQQW MBQGCCsGAQUFBwMCBggrBgEFBQcDBDCBpQYIKwYBBQUHAQEEgZgwgZUwWwYIKwYBBQUHMAKGT2h0 dHA6Ly9pY3AtYnJhc2lsLmFjc2luY29yLmNvbS5ici9yZXBvc2l0b3Jpby9jZXJ0aWZpY2Fkb3Mv QUNfU0lOQ09SX1JGQl9HNS5wN2MwNgYIKwYBBQUHMAGGKmh0dHA6Ly9vY3NwLWFjLXNpbmNvci1y ZmIuY2VydGlzaWduLmNvbS5icjANBgkqhkiG9w0BAQsFAAOCAgEAlYaeDaKD6wAuFOVQygSBxr1O dhMu6yjFFlRYlfRdvbtX1ZEVC7NPr5KitUrnRVxVEeg7MnCjNcozQ7qQaoVKZvo4Xb7BKpenY5Uo wuB1DL3x+X9CPM3VOJtlV2bDbE0w4cwDdL1UsykBrRDtce7WG55BG50QwqLSOneUKoi03WlUiUln 2azKLmBdCMOdCe5E2uDLLDaqUE4/oH3rq6Ml4MICpEmyp38tEU3Jr04qmZhwEgAvSHssz15JcW3v IitrO4S/ajRjrHmZkCr6Dez74SjHii046oGDPqhed3Jm+4xBxuhAL7fMSCYw7J7EYcApD3sRRNS/ BmwaL+xifcUaG1GhwMtAahMNFlyyFHYmB2E/jJBNvyzyZ+iIHtc33gNc6+BdWjO3W0lM9JcOrway UradPcuHhalZIcgGaia6IfaxhcKMdw4wOuVuUgbFWWVzZARoAd1UOmmI6+ehsJsJMZtKRxyC525F ksjinSecIl4OmmG+qNtBzImsrTMQvf+cY36fVm7iIrPcZ0rDOX9I06yUsjpgjfe6L2sqPgbjRjSp kaH4q28iCstU1GVM5thxO4Ly8BxcpDXHmpWTOcFihrpTHqPg+1q0Kc41FUCTPAcowEKLx5w6Pubd k5NKq8h5jSJEiFXGskvBYkKOfpzwbcjKKuiYrPasPSHciJNhkm4=</X509Certificate>
+                    </X509Data>
+                </KeyInfo>
+            </Signature>
+        </CTe>
+        <protCTe versao="3.00">
+            <infProt>
+                <tpAmb>1</tpAmb>
+                <verAplic>RS20200102104513</verAplic>
+                <chCTe>32200102913489000541570030018046101000000012</chCTe>
+                <dhRecbto>2020-01-07T18:23:52-03:00</dhRecbto>
+                <nProt>332200000289219</nProt>
+                <digVal>OEhPYsph6/E81clHx/i4ufAHcvc=</digVal>
+                <cStat>100</cStat>
+                <xMotivo>Autorizado o uso do CT-e</xMotivo>
+            </infProt>
+        </protCTe>
+    </cteProc>
+</xml>

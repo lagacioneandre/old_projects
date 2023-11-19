@@ -1,0 +1,86 @@
+<div id="adicionar-contato">
+  <h2 class="titulo" i18n="@@tituloPaginaAdicionarEditarContatos">
+    { tituloPagina, select, adicionarContato {Adicionar um novo contato} editarContato {Editar contato} }
+  </h2>
+
+  <form class="form-contato" novalidate (ngSubmit)="salvar()" [formGroup]="formContato">
+    <div class="clearfix">
+      <div class="box-imagem left">
+        <label for="imagemContato" class="add-imagem relative" #boxImagem>
+          <img src="{{ urlImagem }}" alt="" class="full-img" />
+          <legend class="legenda" i18n="@@adicionarAlterarImagemNoCadastroDeContato">
+            { textoLegenda, select, adicionarImagem {Adicionar imagem} alterarImagem {Alterar imagem} }
+          </legend>
+          <span class="barra-progresso">
+            <span class="valor">{{ progressoUpload | async | number:'1.2-2' }}%</span>
+            <span class="progresso" [style.width]="(progressoUpload | async) + '%'"></span>
+          </span>
+        </label>
+        <!--/add-imagem-->
+
+        <input type="file" id="imagemContato" name="imagemContato" formControlName="imagemContato" hidden #upload
+          (change)="uploadFoto($event)" />
+      </div>
+      <!--/box-imagem-->
+
+      <div class="col-inputs right">
+        <div class="relative">
+          <input type="text" class="input-form" i18n-placeholder="@@nomeContato" placeholder="Nome" id="nomeContato" name="nomeContato"
+            formControlName="nomeContato" [ngClass]="{'error': mostrarMensagens['nomeContato']}" />
+          <span class="mensagem-erro" *ngIf="mostrarMensagens['nomeContato']" [innerHTML]="mostrarMensagens['nomeContato']"></span>
+        </div>
+
+        <div class="clearfix">
+          <div class="relative col-form perc49 left">
+            <input type="email" class="input-form" i18n-placeholder="@@emailContato" placeholder="E-mail" id="emailContato"
+              name="emailContato" formControlName="emailContato" [ngClass]="{'error': mostrarMensagens['emailContato']}" />
+            <span class="mensagem-erro" *ngIf="mostrarMensagens['emailContato']" [innerHTML]="mostrarMensagens['emailContato']"></span>
+          </div>
+
+          <div class="col-form perc49 right">
+            <select class="input-form" name="marcadorContato" id="marcadorContato" formControlName="marcadorContato">
+              <option value="" selected="selected" i18n="@@selecionarMarcadorCadastroContato">Selecione um marcador</option>
+              <option value="{{ marker.id }}" *ngFor="let marker of markersList">{{ marker.name }}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="clearfix">
+          <div class="relative col-form perc49 left">
+            <input type="tel" class="input-form" i18n-placeholder="@@telefoneContato" placeholder="Telefone" id="telefoneContato"
+              name="telefoneContato" maxlength="16" formControlName="telefoneContato" [ngClass]="{'error': mostrarMensagens['telefoneContato']}"
+              #phone (keyup)="maskPhone(phone.value)" />
+            <span class="mensagem-erro" *ngIf="mostrarMensagens['telefoneContato']" [innerHTML]="mostrarMensagens['telefoneContato']"></span>
+          </div>
+
+          <div class="col-form perc49 right">
+            <label for="contatoFavorito" class="checkbox-label relative">
+              <input type="checkbox" name="contatoFavorito" id="contatoFavorito" formControlName="contatoFavorito" />
+              <span class="text" i18n="@@seContatoFavorito">Contato Favorito?</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <!--/col-inputs-->
+    </div>
+    <!--/clearfix-->
+
+    <textarea class="input-form" i18n-placeholder="@@descricaoContato" placeholder="Descrição" id="descricaoContato" name="descricaoContato"
+      formControlName="descricaoContato"></textarea>
+
+    <div class="row-buttons text-right">
+      <button class="btn default" type="button" (click)="back()" i18n="@@voltarCadastroContato">
+        <i class="fa fa-arrow-left"></i>
+        Voltar
+      </button>
+
+      <button class="btn primary" type="submit" [disabled]="!formContato.valid || !formContato.dirty" i18n="@@salvarContato">
+        <i class="fa fa-check"></i>
+        Salvar
+      </button>
+    </div>
+  </form>
+</div>
+<!--/adicionar-contato-->
+
+<app-toaster></app-toaster>

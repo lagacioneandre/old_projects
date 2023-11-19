@@ -1,0 +1,71 @@
+<div class="backdrop" *ngIf="details"></div>
+
+<div class="content-details" *ngIf="details">
+  <div class="center">
+    <div class="header clearfix">
+      <div class="content-left left">
+        <div class="image">
+          <img src="{{ details.linkImagem }}" alt="{{ details.nomeContato }}" class="full-img" *ngIf="details.linkImagem" />
+          <span class="letter" *ngIf="!details.linkImagem" [ngStyle]="{ 'background-color': details.imgColor }">
+            {{ details.nomeContato.substr(0, 1) }}
+          </span>
+        </div>
+
+        <h3 class="name">{{ details.nomeContato }}</h3>
+      </div>
+      <!--/content-left-->
+
+      <div class="content-right right relative">
+        <ul class="actions-list">
+          <li>
+            <button class="btn-action" type="button" (click)="favorite(details)">
+              <i class="fa fa-star" aria-hidden="true"></i>
+            </button>
+          </li>
+          <li>
+            <button class="btn-action" type="button" (click)="edit(details.id)">
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            </button>
+          </li>
+          <li>
+            <button class="btn-action" type="button" (click)="removeContact(details)">
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </button>
+          </li>
+          <li>
+            <button class="btn-action" type="button" (click)="close()">
+              <i aria-hidden="true" class="fa fa-times"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <!--/content-right-->
+    </div>
+    <!--/header-->
+
+    <div class="content">
+      <h6 class="title" i18n="@@tituloDetalhesContato">Detalhes do contato</h6>
+
+      <ul class="details-list">
+        <li>
+          <span class="icon"><i class="fa fa-envelope"></i></span>
+          {{ details.emailContato }}
+        </li>
+        <li>
+          <span class="icon"><i class="fa fa-phone"></i></span>
+          {{ details.telefoneContato | phoneMask }}
+        </li>
+        <li>
+          <span class="icon" [ngClass]="{'favorite': details.favorito}"><i class="fa fa-star"></i></span>
+          {{ details.favorito ? 'Sim' : 'Não' }}
+        </li>
+      </ul>
+
+      <h6 class="title" i18n="@@descricaoDetalhesContato">Descrição</h6>
+      <p>{{ details.descricaoContato || 'Sem descrição' }}</p>
+    </div>
+    <!--/content-->
+  </div>
+  <!--/center-->
+</div>
+<!--/content-details-->

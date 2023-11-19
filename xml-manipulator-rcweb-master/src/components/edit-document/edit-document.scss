@@ -1,0 +1,87 @@
+// variables
+$base: #01579b;
+$alertText: #b71c1c;
+
+#edit-document {
+    .title {
+        display: block;
+        font-size: 18px;
+        color: #fff;
+        font-weight: bold;
+        background-color: $base;
+        padding: 10px 15px;
+    }
+
+    form {
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid $base;
+        margin-bottom: 10px;
+
+        .box-input {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            padding: 0 10px;
+
+            &:nth-child(3) {
+                width: 0;
+            }
+
+            &:last-child {
+                padding-right: 0;
+                width: 10%;
+                align-items: flex-end;
+            }
+
+            label {
+                font-size: 13px;
+                color: $base;
+                display: inline-block;
+                margin-bottom: 5px;
+            }
+
+            input {
+                height: 35px;
+                border: 1px solid darken($base, 15%);
+                padding: 5px 15px;
+                border-radius: 5px;
+            }
+
+            .send {
+                background-color: $base;
+                border: none;
+                width: 80%;
+                height: 35px;
+                color: #fff;
+                margin-top: 17px;
+                border-radius: 5px;
+                cursor: pointer;
+    
+                &:hover {
+                    background-color: darken($base, 10%);
+                }
+
+                &:disabled {
+                    cursor: not-allowed;
+    
+                    &:hover {
+                        background-color: $base;
+                    }
+                }
+            }
+
+        } //.box-input
+
+    } //form
+
+    .alert {
+        display: block;
+        margin: 0 0 25px 15px;
+        font-size: 12px;
+        color: $alertText;
+    }
+
+} //#edit-document

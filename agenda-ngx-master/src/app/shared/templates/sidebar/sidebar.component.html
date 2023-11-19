@@ -1,0 +1,104 @@
+<div id="sidebar">
+  <nav class="box-category">
+    <ul>
+      <li>
+        <a title="Contatos" i18n="@@sidebarContatos" i18n-title="@@sidebarTitleContatos" [routerLink]="'/contacts/list'">
+          <span class="icon">
+            <i class="fa fa-users" aria-hidden="true"></i>
+          </span>
+          Contatos
+        </a>
+      </li>
+      <li>
+        <a title="Favoritos" i18n="@@sidebarFavoritos" i18n-title="@@sidebarTitleFavoritos" [routerLink]="'/contacts/favorites'">
+          <span class="icon">
+            <i class="fa fa-star" aria-hidden="true"></i>
+          </span>
+          Favoritos
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!--/box-category-->
+
+  <nav class="box-category">
+    <ul>
+      <li>
+        <a title="Marcadores" i18n="@@sidebarMarcadores" i18n-title="@@sidebarTitleMarcadores" [routerLink]="'/contacts/list'"
+          (click)="controlSubMarkers = !controlSubMarkers">
+          <span class="icon">
+            <i class="fa fa-chevron-up" aria-hidden="true" *ngIf="controlSubMarkers"></i>
+            <i class="fa fa-chevron-down" aria-hidden="true" *ngIf="!controlSubMarkers"></i>
+          </span>
+          Marcadores
+        </a>
+
+        <ul class="subcategory" [ngClass]="{'show': controlSubMarkers, 'hide': !controlSubMarkers}">
+          <li *ngFor="let marker of markersList" (click)="emitIdCategory(marker.id, marker.name)">
+            <a title="{{ marker.name }}" [routerLink]="marker.rota">
+              {{ marker.name }}
+            </a>
+          </li>
+        </ul>
+        <!--/subcategory-->
+      </li>
+    </ul>
+  </nav>
+  <!--/box-category-->
+
+  <nav class="box-category">
+    <ul>
+      <li>
+        <a title="Mais" i18n="@@sidebarMais" i18n-title="@@sidebarTitleMais" (click)="controlSubMore = !controlSubMore">
+          <span class="icon">
+            <i class="fa fa-chevron-up" aria-hidden="true" *ngIf="controlSubMore"></i>
+            <i class="fa fa-chevron-down" aria-hidden="true" *ngIf="!controlSubMore"></i>
+          </span>
+          Mais
+        </a>
+
+        <ul class="subcategory" [ngClass]="{'show': controlSubMore, 'hide': !controlSubMore}">
+          <li (click)="exportAllContacts()">
+            <a title="Exportar Todos" i18n="@@sidebarExportarTodos" i18n="@@sidebarTitleExportarTodos">Exportar Todos</a>
+          </li>
+        </ul>
+        <!--/subcategory-->
+      </li>
+    </ul>
+  </nav>
+  <!--/box-category-->
+
+  <nav class="box-category">
+    <ul>
+      <li>
+        <a href="https://andrelagacione.github.io/agenda-ngx-pt/" title="Português" i18n="@@sidebarPortugues"
+          i18n-title="@@sidebarTitlePortugues" class="flag-link">
+          <span class="flag">
+            <img src="assets/images/brasil.jpg" alt="bandeira do Brasil" i18n-alt="@@sideBarAltBanderiaBrasil" />
+          </span>
+          Português
+        </a>
+      </li>
+      <li>
+        <a href="https://andrelagacione.github.io/agenda-ngx-en/" title="Inglês" i18n="@@sidebarIngles" i18n-title="@@sidebarTitleIngles"
+          class="flag-link">
+          <span class="flag">
+            <img src="assets/images/usa.jpg" alt="bandeira do USA" i18n-alt="@@sideBarAltBanderiaUsa" />
+          </span>
+          Inglês
+        </a>
+      </li>
+      <li>
+        <a href="https://andrelagacione.github.io/agenda-ngx-es/" title="Espanhol" i18n="@@sidebarEspanhol" i18n-title="@@sidebarTitleEspanhol"
+          class="flag-link">
+          <span class="flag">
+            <img src="assets/images/espanha.jpg" alt="bandeira da Espanha" i18n-alt="@@sideBarAltBanderiaEspanha" />
+          </span>
+          Espanhol
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!--/box-category-->
+</div>
+<!--/sidebar-->

@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "projects": {
+    "header": "libs/header",
+    "root": "apps/root",
+    "root-e2e": "apps/root-e2e"
+  }
+}

@@ -1,0 +1,15 @@
+<div id="toaster-component" *ngIf="toasterList.length">
+  <div class="toaster {{ toaster.tipo }}" *ngFor="let toaster of toasterList" (click)="hiddenToaster(toaster.id)">
+    <div class="icon">
+      <i class="fa fa-check" *ngIf="toaster.tipo === 'success'"></i>
+      <i class="fa fa-info-circle" *ngIf="toaster.tipo === 'info'"></i>
+      <i class="fa fa-exclamation-triangle" *ngIf="toaster.tipo === 'warning'"></i>
+      <i class="fa fa-times-circle" *ngIf="toaster.tipo === 'error'"></i>
+    </div>
+
+    <div class="col-texto">
+      <strong class="titulo">{{ toaster.titulo }}</strong>
+      <p class="texto">{{ toaster.texto }}</p>
+    </div>
+  </div>
+</div>

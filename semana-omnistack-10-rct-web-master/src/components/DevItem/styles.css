@@ -1,0 +1,103 @@
+li.dev-item {
+    background-color: #fff;
+    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
+    border-radius: 2px;
+    padding: 20px;
+}
+
+li.dev-item header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+li.dev-item header img {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+}
+
+li.dev-item header .user-info {
+    margin-left: 10px;
+}
+
+.user-info strong {
+    display: block;
+    font-size: 16px;
+    color: #333;
+}
+
+.user-info span {
+    font-size: 13px;
+    color: #999;
+    margin-top: 2px;
+}
+
+li.dev-item p {
+    color: #666;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 10px 0;
+}
+
+li.dev-item a {
+    color: #8e4dff;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+li.dev-item a:hover {
+    color: #5a2ea6;
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+}
+
+.actions .flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.actions .w70 {
+    width: 70%;
+}
+
+.actions .w30 {
+    width: 30%;
+    justify-content: flex-end;
+}
+
+.actions button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+.actions button.edit {
+    color: #015DAD;
+    border-color: #1373C7;
+    background-color: #BDE0FF;
+}
+
+.actions button.edit:hover {
+    color: #fff;
+    background-color: #1373C7;
+}
+
+.actions button.remove {
+    color: #AD0101;
+    border-color: #E32B2B;
+    background-color: #FFC8C8;
+}
+
+.actions button.remove:hover {
+    color: #fff;
+    background-color: #E32B2B;
+}

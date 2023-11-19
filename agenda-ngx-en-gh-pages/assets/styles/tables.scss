@@ -1,0 +1,48 @@
+@import '_default';
+
+.default-table {
+    width: 100%;
+
+    tr {
+        border-bottom: 1px dashed darken($white, 15%);
+
+        &:last-child {
+            border: 0;
+        }
+
+        &:hover {
+            td {
+                background-color: darken($white, 10%);
+            }
+        }
+
+        th {
+            background-color: darken($white, 15%);
+            font-size: 13px;
+            color: $default-text;
+            font-weight: bold;
+            padding: 10px;
+            text-align: left;
+        }
+
+        td {
+            font-size: 13px;
+            color: $default-text;
+            padding: 10px;
+        }
+
+        .btn {
+            width: 30px;
+            height: 30px;
+            padding: 0;
+            text-align: center;
+        }
+
+    } //tr
+
+    .col-actions {
+        width: 10%;
+        text-align: center;
+    }
+
+} //.default-table

@@ -1,0 +1,19 @@
+@import '../../../../assets/styles/_default';
+
+.loader {
+    background-color: rgba(0, 0, 0, .6);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+        font-size: 75px;
+        color: $white;
+    }
+}

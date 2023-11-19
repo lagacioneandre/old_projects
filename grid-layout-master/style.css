@@ -1,0 +1,152 @@
+.mb-mt {
+    margin: 25px 0;
+    border-bottom: 1px solid #aaa;
+}
+
+.p-0 {
+    padding: 0 !important;
+}
+
+.pb-5 {
+    padding-bottom: 5px !important;
+}
+
+.pr-5 {
+    padding-right: 5px !important;
+}
+
+.m-0 {
+    margin: 0 !important;
+}
+
+.content {
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+.content.grid {
+    display: grid;
+}
+
+.item {
+    background-color: #8b0000;
+    padding: 5px;
+    margin: 5px 0 0 5px;
+    color: #000;
+}
+
+.logo {
+    grid-area: logo;
+}
+
+.nav {
+    grid-area: nav;
+}
+
+.sidenav {
+    grid-area: sidenav;
+}
+
+.content {
+    grid-area: content;
+}
+
+.advert {
+    grid-area: advert;
+}
+
+.categories {
+    grid-area: categories;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.grid-area-1 {
+    grid-template-areas:
+        "logo    nav     nav    nav"
+        "sidenav content advert categories"
+        "sidenav footer  footer categories";
+}
+
+.grid-area-2 {
+    grid-template-columns: 30% 60% 10%;
+	grid-template-rows: 50px 150px 50px;
+	grid-template-areas:
+		"logo    nav     nav"
+		"sidenav content advert"
+		"sidenav footer  footer"
+		;
+}
+
+.grid-area-3 {
+    grid-template-areas:
+		"logo    content nav"
+		".       content advert"
+		"sidenav footer  ."
+		;
+}
+
+.grid-area-4 {
+    grid-template:
+		"logo nav nav" 50px
+		"sidenav content advert" 150px
+		"sidenav footer footer" 100px
+		/ 100px 1fr 50px;
+}
+
+.grid-area-5 {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    grid-auto-rows: 50px;
+}
+
+.grid-area-5 .item-1 {
+	grid-row: 2 / 4;
+	grid-column: 2 / 5;
+	background: rgb(255,0,0);
+	mix-blend-mode: luminosity;
+}
+
+.grid-area-5 .item-2 {
+	grid-area: 3 / 3 / span 3 / 5;
+	background: rgb(0,255,0);
+	mix-blend-mode: luminosity;
+}
+
+.grid-area-5 .item-12 {
+	grid-row-start: 1;
+	grid-column-start: 4;
+	grid-row-end: 7;
+	grid-column-end: 6;
+	background: rgb(0,0,255);
+	mix-blend-mode: luminosity;
+}
+
+.gap-20 {
+    gap: 20px;
+}
+
+.gap-5 {
+    gap: 5px;
+}
+
+.column-gap-5 {
+    column-gap: 5px;
+}
+
+.row-gap-5 {
+    row-gap: 5px;
+}
+
+.item-6 {
+	grid-column: 5;
+}
+
+.span-2 {
+	grid-column: span 2;
+}
+
+.span-3 {
+	grid-column: span 3;
+}
